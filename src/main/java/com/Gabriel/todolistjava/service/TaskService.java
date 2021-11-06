@@ -2,19 +2,17 @@ package com.Gabriel.todolistjava.service;
 
 import com.Gabriel.todolistjava.model.Task;
 import com.Gabriel.todolistjava.repository.TaskRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class TaskService {
 
-    @Autowired
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
     public Task createTask (Task task){
         return taskRepository.save(task);
